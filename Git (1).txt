@@ -1,0 +1,114 @@
+git是目前世界上最先进的分布式版本控制系统
+https://github.com/
+下载教程:https://www.cnblogs.com/wj-1314/p/7993819.html
+一、配置用户名email
+git config --global use.name "用户名必须和远程服务器一致"
+git config --global use.email "和远程服务器一致"
+检查:git config --global  --list 
+二、配置ssh
+ssh-keygen -t rsa -C "gdutxiaoxu@163.com"
+ssh -T git@github.com 检测是否成功
+git clone 从远程仓库克隆项目
+三、过程
+   工作区和暂存区还有版本库理解  
+
+四、创建版本库
+1、mkdir  文件夹名--创建工作区
+2、cd 文件夹名 --进入文件夹
+3、git init   --创建 版本库  生成一个.git文件
+4、touch 文件名称   --创建文件 编码为utf-8
+5、git status   --检查当前状态  常用
+6、git add 文件名称
+7、git commit -m"解释说明"   将暂存的文件提交到版本库
+
+五、上传远程服务器
+ git remote add origin
+
+
+
+ssh-keygen -t rsa -C "1587302228qq.com"
+
+touch readme1.txt  创建文件
+git add readme1.txt   将文件上传到暂存区
+git status  检查git里面的状态
+git commit -m
+
+
+
+查看
+  git config --list
+
+git remote rm origin
+
+
+
+
+安装结束之后
+一、配置一下用户名和email
+ git config --global user.name "用户名必须和远程服务器一致" 
+ git config --global user.email "和远程服务器一样的邮箱"
+
+二、配置ssh
+三、过程
+--工作区和暂存区还有版本库理解  过程一定要知道
+
+四、创建版本库
+1、mkdir 文件夹名--创建工作区
+2、cd 文件夹名 =--进入文件夹 
+3、git init  --创建版本库 生成一个.git文件
+4、touch 文件名称 --创建文件 编码为utf-8
+5、git status  --检查当前状态  经常用到的 
+6、git add 文件名称
+7、git commit -m"解释说明 " 将暂存区的文件 提交到 我们的版本库 
+
+8、clear 清屏
+9、cat 文件名 --查看我们放入工作区的文件内容 确认无误后在执行上传
+
+五、上传远程服务器
+$ git remote add origin git@github.com:WangWeiZhang/first.git //找到地址
+   注意：一定是ssh地址
+$ git remote rm origin   找到地址时候如果报错 执行这条代码
+
+$ git push -u origin master  //push到主分支master 
+   
+
+修改文件
+1、cat 文件名：查看最新放到文件区的文件内容
+2、git diff：查看修改的内容，生成日志文件  记录修改的内容、时间
+3、git log：查看上传版本库的时间
+4、从缓存区退回到工作区
+  touch 文件名 //创建文件 
+  git add 文件名  //上传缓存区
+  git reset head 文件名
+  
+版本回退：每次commit之后都会生成一个日志文件
+用git log查看日志
+ git reset --hard head^
+ 
+ git reset --hard 版本的id名字（最少要前六位）
+
+git reflog:
+
+练习
+  git init 创建版本库
+  git touch 文件名  创建文件
+  git status 查看创建是否成功
+  git add 文件名  上传缓存区
+  git commit -m"提交说明"
+  生成log文件（日志文件）其实就是一个版本
+  修改  继续add  --commit  一次
+  生成另一个log 文件（日志文件）
+  修改  继续add --commit 一次
+  生成另一个log文件  （日志文件） 
+  git reset --hard head^  会退到上一个版本
+  可以继续修改
+  还想要回到未来的版本使用commit-id （前六个就可以）
+  git reset --hard commit-id
+  关闭电脑后    使用
+  
+删除文件：rm 文件名称
+撤销删除：delete
+	
+https://blog.csdn.net/saytime/article/details/51225651
+https://blog.csdn.net/saytime/article/details/51226188
+廖雪峰git官方网站
